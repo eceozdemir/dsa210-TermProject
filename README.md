@@ -4,25 +4,17 @@
 Project Overview
 
 
-This project aims to investigate the relationship between phone screen time and studying hours.  The objective is to analyze weather increased phone usage impacts study duration and efficiency. By collecting and analyzing data on daily screen time and study hours, this project seeks to determine if excessive screen time is correlated with reduced academic productivity.
-
+This project explores how daily weather conditions influence the amount of energy (in kWh) charged into my Tesla vehicle. The goal is to understand how environmental factors affect electric vehicle behavior. It is expected that colder weather leads to more frequent charging sessions, whereas warmer weather is associated with increased travel activity compared to colder days.
 
 Hypotheses
-
-- First hypothesis: Increased phone screen time is associated with lower total study hours.  
-- Second hypothesis: Higher screen time before studying negatively impacts study efficiency.
-
+My hypothesis is that colder and rainier weather conditions, which reduce battery efficiency, might lead to longer or more frequent charging sessions.
 
 Data Sources
 
-1. Apple Screen Time Data
-  Collected Data: 
-  - Total screen time per day. 
-  - Time spent on specific app categories (social media, messaging, productivity apps).  
-  - Number of phone unlocks per day.
+1.Tesla Charging Data (via Teslascope):
+
+-Date: Date of the charging session
+-Charge_kWh: Amount of energy charged in kWh
  
-2. Study Tracking App Data
-  Collected Data: 
-  - Total study hours per day.  
-  - Study session durations.  
-  - Start and end times of study sessions.  
+2. Weather Data (?OpenWeatherMap API.)
+  - Use API (Visual Crossing or OpenWeatherMap) to get weather data 
