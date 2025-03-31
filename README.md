@@ -13,8 +13,12 @@ Data Sources
 
 1.Tesla Charging Data (via Teslascope):
 
+
 -Date: Date of the charging session
+
 -Charge_kWh: Amount of energy charged in kWh
  
-2. Weather Data (?OpenWeatherMap API.)
-  - Use API (Visual Crossing or OpenWeatherMap) to get weather data 
+2.Weather Data (?OpenWeatherMap API.)
+
+   
+-Use API (penWeatherMap) to get weather data 
