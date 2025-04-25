@@ -92,3 +92,13 @@ T-Test Results:
 T-Statistic: -1.285
 P-Value: 0.2024
 Conclusion: P-value > 0.05, so we fail to reject the null hypothesis. Rain does not have a statistically significant impact on energy charging.
+
+Conclusion
+--
+-Most Tesla charging days occur under cloudy or rainy conditions.
+Weather conditions like rain or snow do not significantly affect daily energy charged based on statistical testing.
+Energy usage is highly variable and weather features alone are not good predictors.
+
+Limitations and future work
+1.time period is limited (only 4 months )
+2.Driver habits, trip distance and car usage patterns are not included.
