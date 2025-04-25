@@ -10,9 +10,9 @@ In this project, I will analyze the relationship between the daily energy (kWh) 
 Hypothesis 
 --
 
-Null Hypothesis (H₀): There is no significant relationship between daily weather conditions and the amount of energy (kWh) charged to the Tesla.
+Null Hypothesis (H₀):  There is no significant difference in energy charged to Tesla between rainy and non-rainy days.
 
-Alternative Hypothesis (H₁): There is a significant relationship between daily weather conditions and the amount of energy (kWh) charged to the Tesla.
+Alternative Hypothesis (H₁): ainy days significantly affect the energy charged.
 
 Description of Dataset
 
@@ -44,25 +44,51 @@ Daily energy consumption data (in kWh) will be obtained from Tesla. The raw data
 
 Unnecessary columns will be removed, missing values will be handled appropriately, and the data will be aligned by date to ensure both weather and energy data correspond to the same day.
 
--Exploratory Data Analysis (EDA):
-
-Initial analysis will focus on identifying patterns and trends in daily energy consumption and how they vary with temperature, humidity, and other weather conditions. This will involve statistical summaries and visualizations.
-
-Visualization Techniques
+Explonatory Data Analysis (EDA)
 --
+1. Univariate Analysis
 
-Univariate Analysis: Histogram and countplot
+Histogram: Displayed the distribution of daily energy charged, showing a right-skewed shape.
 
-Bivariate Analysis: Boxplots and scatter plots
+Summary Statistics:
 
-Multivariate Analysis: Correlation heatmap and bar plot
+Mean: 11.19 kWh
+Median: 0.00 kWh
+Mode: 0.00 kWh
 
-Machine Learning Models
+2. Bar Charts
+
+Average Monthly Charging: Highlighted that some months had significantly higher average energy usage.
+Weather Condition Frequency: Cloudy and Rainy days were the most common
+
+3. Weather-wise Energy Charts
+
+Created separate daily bar charts showing energy charged on each day, grouped by weather category (Cloudy, Rainy, Snowy, Windy, Sunny).
+
+4. Boxplot
+
+Illustrated the variation in energy charged across different weather conditions. Sunny days showed the highest median charging.
+
+5. Line Plot
+
+Visualized the time series trend of energy charged over the full dataset period.
+
+6. Correlation Heatmap
+
+Computed correlation matrix between weather variables and energy charged:
+
+-Weak negative correlation with humidity.(?
+-Slight positive correlation with windspeed and temperature.
+
+7. Pairplot
+
+Provided a multi-variable visual analysis of relationships between energy charged and weather variables.
+
+
+Hypothesis Testing
 --
+T-Test Results:
 
-Linear Regression
-
-Decision Tree
-
-Random Forest
-
+T-Statistic: -1.285
+P-Value: 0.2024
+Conclusion: P-value > 0.05, so we fail to reject the null hypothesis. Rain does not have a statistically significant impact on energy charging.
