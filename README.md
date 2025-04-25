@@ -2,12 +2,13 @@
 
 
 Project Overview
-
+--
 
 In this project, I will analyze the relationship between the daily energy (kWh) charged to my Tesla vehicle and the weather conditions on that day. The goal is to explore whether certain weather parameters (e.g., temperature, humidity, wind speed) influence the amount of energy I charge into my car. Understanding this relationship could help identify patterns in energy consumption behavior depending on environmental factors.
 
 
 Hypothesis 
+--
 
 Null Hypothesis (H₀): There is no significant relationship between daily weather conditions and the amount of energy (kWh) charged to the Tesla.
 
@@ -47,9 +48,21 @@ Unnecessary columns will be removed, missing values will be handled appropriatel
 
 Initial analysis will focus on identifying patterns and trends in daily energy consumption and how they vary with temperature, humidity, and other weather conditions. This will involve statistical summaries and visualizations.
 
--Regression Analysis:
+Visualization Techniques
+--
 
-Statistical modeling techniques such as linear regression will be used to examine the relationship between weather variables (independent variables) and the amount of energy charged daily (dependent variable). The aim is to determine if specific weather conditions are associated with increased or decreased charging behavior.
+Univariate Analysis: Histogram and countplot
 
+Bivariate Analysis: Boxplots and scatter plots
 
+Multivariate Analysis: Correlation heatmap and bar plot
+
+Machine Learning Models
+--
+
+Linear Regression
+
+Decision Tree
+
+Random Forest
 
