@@ -29,9 +29,10 @@ At the end of the data collection period:
 The dataset will be reviewed for completeness, consistency, and correctness.
 
 -Weather Data:
+Hourly weather data was obtained from the Open-Meteo historical weather API. The data included parameters such as temperature at 2 meters, relative humidity, precipitation, rain, snowfall, and wind speed at 10 meters. The request was made for the coordinates of my location in Istanbul (latitude: 41.01933, longitude: 29.015692), covering the date range from January 1, 2025, to April 23, 2025. The data was retrieved using the following API endpoint:
+https://archive-api.open-meteo.com/v1/archive?latitude=41.01933&longitude=29.015692&start_date=2025-01-01&end_date=2025-04-23&hourly=temperature_2m,relative_humidity_2m,precipitation,rain,snowfall,windspeed_10m&timezone=Europe%2FIstanbul
 
-Weather information will be obtained from Open-Meteo. Since the API does not directly provide daily average values, hourly data for parameters such as temperature, humidity, and wind speed will be collected for each day and averaged by dividing the sum by 24 to obtain a representative daily value.
-
+Since Open-Meteo does not directly provide daily averages, I manually calculated the daily means by averaging the 24 hourly observations for each variable.
 -Energy Data:
 
 Daily energy consumption data (in kWh) will be obtained from Tesla. The raw dataset provided by Tesla includes additional variables such as charging start and end times, duration, location, and charger type. These irrelevant fields will be filtered out to retain only the total energy charged per day.
