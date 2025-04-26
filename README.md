@@ -12,7 +12,7 @@ Hypothesis
 
 Null Hypothesis (H₀):  There is no significant difference in energy charged to Tesla between rainy and non-rainy days.
 
-Alternative Hypothesis (H₁): ainy days significantly affect the energy charged.
+Alternative Hypothesis (H₁): rainy days significantly affect the energy charged.
 
 Description of Dataset
 
