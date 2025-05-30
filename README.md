@@ -33,6 +33,7 @@ The dataset will be reviewed for completeness, consistency, and correctness.
 Hourly weather data was obtained from the Open-Meteo historical weather API. The data included parameters such as temperature at 2 meters, relative humidity, precipitation, rain, snowfall, and wind speed at 10 meters. The request was made for the coordinates of my location in Istanbul (latitude: 41.01933, longitude: 29.015692), covering the date range from January 1, 2025, to April 23, 2025. The data was retrieved using the following API endpoint:
 [https://archive-api.open-meteo.com/v1/archive?latitude=41.01933&longitude=29.015692&start_date=2025-01-01&end_date=2025-04-23&hourly=temperature_2m,relative_humidity_2m,precipitation,rain,snowfall,windspeed_10m&timezone=Europe%2FIstanbul
 ](https://archive-api.open-meteo.com/v1/archive?latitude=41.01933&longitude=29.01569&start_date=2024-06-30&end_date=2025-05-21&hourly=temperature_2m,relative_humidity_2m,rain,snowfall,windspeed_10m&timezone=Europe%2FIstanbul)
+
 Since Open-Meteo does not directly provide daily averages, I manually calculated the daily means by averaging the 24 hourly observations for each variable.
 I am planning to use snow, rain and wind datas as only 0 or grater than 0 which will be easy to see the affect of the weather .
 
