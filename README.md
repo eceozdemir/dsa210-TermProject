@@ -4,15 +4,16 @@
 Project Overview
 --
 
-In this project, I will analyze the relationship between the daily energy (kWh) charged to my Tesla vehicle and the weather conditions on that day. The goal is to explore whether certain weather parameters (e.g., temperature, humidity, wind speed) influence the amount of energy I charge into my car. Understanding this relationship could help identify patterns in energy consumption behavior depending on environmental factors.
+As a general understanding, it is widely known that electric vehicles tend to consume more energy in cold weather due to the use of heating systems inside the car and reduced battery efficiency. However, I wanted to investigate whether this pattern is also reflected in my own driving and charging behavior. If I tend to charge more on cold or bad weather days—such as rainy or snowy days—this would not only confirm general knowledge but also help me plan future road trips more cautiously by anticipating higher energy needs. With this motivation, the main objective of this project is to analyze the relationship between the daily energy (kWh) charged to my Tesla vehicle and the weather conditions on that day, and explore whether specific weather parameters (e.g., snow, temperature, wind) influence the amount of energy I charge into my car.
 
 
 Hypothesis 
 --
+To test whether weather conditions impact my charging behavior, I defined the following hypotheses:
 
-Null Hypothesis (H₀):  There is no significant difference in energy charged to Tesla between rainy and non-rainy days.
+Null Hypothesis (H₀):  There is no significant difference in energy charged to Tesla between rainy/snowy days and other days.
 
-Alternative Hypothesis (H₁): rainy days significantly affect the energy charged.
+Alternative Hypothesis (H₁): Rainy or snowy days significantly affect the energy charged.
 
 Description of Dataset
 
@@ -30,7 +31,7 @@ At the end of the data collection period:
 The dataset will be reviewed for completeness, consistency, and correctness.
 
 -Weather Data:
-Hourly weather data was obtained from the Open-Meteo historical weather API. The data included parameters such as temperature at 2 meters, relative humidity, precipitation, rain, snowfall, and wind speed at 10 meters. The request was made for the coordinates of my location in Istanbul (latitude: 41.01933, longitude: 29.015692), covering the date range from January 1, 2025, to April 23, 2025. The data was retrieved using the following API endpoint:
+Hourly weather data was obtained from the Open-Meteo historical weather API. The data included parameters such as temperature at 2 meters, relative humidity, precipitation, rain, snowfall, and wind speed at 10 meters. The request was made for the coordinates of my location in Istanbul (latitude: 41.01933, longitude: 29.015692), covering the date range from 30.06.2024 to 21.05.2025. The data was retrieved using the following API endpoint:
 [https://archive-api.open-meteo.com/v1/archive?latitude=41.01933&longitude=29.015692&start_date=2025-01-01&end_date=2025-04-23&hourly=temperature_2m,relative_humidity_2m,precipitation,rain,snowfall,windspeed_10m&timezone=Europe%2FIstanbul
 ](https://archive-api.open-meteo.com/v1/archive?latitude=41.01933&longitude=29.01569&start_date=2024-06-30&end_date=2025-05-21&hourly=temperature_2m,relative_humidity_2m,rain,snowfall,windspeed_10m&timezone=Europe%2FIstanbul)
 
