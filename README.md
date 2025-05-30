@@ -168,3 +168,6 @@ Some misclassifications were made especially at higher ranges, possibly due to d
 Limitations and future work
 1.time period is limited (only 1 year )
 2.Driver habits, trip distance and car usage patterns are not included.
+
+
+- AI tools were utilized to assist with improving clarity in written explanations, enhancing the structure of this README, correcting syntax errors, and debugging faulty code. However, the analytical work, modeling steps, and result interpretations were completed through personal effort.
