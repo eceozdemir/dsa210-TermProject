@@ -17,7 +17,8 @@ Alternative Hypothesis (H₁): Rainy or snowy days significantly affect the ener
 
 Description of Dataset
 
-Energy charged (kWh): Daily energy data will be obtained through the Tesla, showing how much electricity I charged into the car each day.
+Energy charged (kWh): Daily energy data will be obtained through the Tesla, showing how much electricity I charged into the car each day.The raw dataset included fields like start/end times, charger type, and location. These were filtered to retain only the total energy charged per day.
+
 
 Weather conditions: Daily weather data including temperature, humidity, precipitation, snowfall, and wind speed will be collected using the Open-Meteo API.
 
@@ -54,11 +55,12 @@ Histogram: Displayed the distribution of daily energy charged, showing a right-s
 
 Summary Statistics:
 
-Mean: 11.19 kWh
+Mean: 10.44 kWh
 Median: 0.00 kWh
 Mode: 0.00 kWh
 
 2. Bar Charts
+![image](https://github.com/user-attachments/assets/5c5d89c5-f601-4735-93e5-1594ecdde77a)
 
 Average Monthly Charging: Highlighted that some months had significantly higher average energy usage.
 Weather Condition Frequency: Cloudy and Rainy days were the most common
@@ -66,23 +68,36 @@ Weather Condition Frequency: Cloudy and Rainy days were the most common
 3. Weather-wise Energy Charts
 
 Created separate daily bar charts showing energy charged on each day, grouped by weather category (Cloudy, Rainy, Snowy, Windy, Sunny).
+![image](https://github.com/user-attachments/assets/e66e404e-00ac-4942-90d1-48913a37eacb)
+![image](https://github.com/user-attachments/assets/d7eb7ccb-6ea3-43d4-99dd-9374e4d14b59)
+![image](https://github.com/user-attachments/assets/9c2990ba-0fb8-473d-af82-aeb07f58b73d)
+![image](https://github.com/user-attachments/assets/70fc0343-3c11-45ac-94d3-1abe380ac024)
+
+
+
 
 4. Boxplot
+![image](https://github.com/user-attachments/assets/a58860b0-dc31-4c8a-8ac7-d66f49a3d8cb)
 
 Illustrated the variation in energy charged across different weather conditions. Sunny days showed the highest median charging.
 
 5. Line Plot
+![image](https://github.com/user-attachments/assets/8db4d471-f184-4f7c-b342-8ef3ed44fbf8)
+
 
 Visualized the time series trend of energy charged over the full dataset period.
 
 6. Correlation Heatmap
+![image](https://github.com/user-attachments/assets/a58d8084-5fa7-49ad-9533-d3beb66ad1b2)
+
 
 Computed correlation matrix between weather variables and energy charged:
 
--Weak negative correlation with humidity.(?
+-Weak negative correlation with humidity.
 -Slight positive correlation with windspeed and temperature.
 
 7. Pairplot
+![image](https://github.com/user-attachments/assets/5b4c1a3f-9d01-40e1-819f-277f733f1a09)
 
 Provided a multi-variable visual analysis of relationships between energy charged and weather variables.
 
@@ -91,18 +106,65 @@ Hypothesis Testing
 --
 T-Test Results:
 
-T-Statistic: -1.285
+T-Statistic: -0.854
 
-P-Value: 0.2024
+P-Value: 0.3940
 
-Conclusion: P-value > 0.05, so we fail to reject the null hypothesis. Rain does not have a statistically significant impact on energy charging.
+Conclusion: P-value > 0.05, so we fail to reject the null hypothesis. 
 
 Conclusion
 --
--Most Tesla charging days occur under cloudy or rainy conditions.
-Weather conditions like rain or snow do not significantly affect daily energy charged based on statistical testing.
-Energy usage is highly variable and weather features alone are not good predictors.
+This project aimed to explore whether environmental conditions affect my Tesla charging habits. Despite general expectations that cold or bad weather increases EV energy consumption, my personal data shows no statistically significant difference in charging behavior on rainy or snowy days. Additionally, predictive modeling using only weather variables produced low to moderate performance, supporting the idea that weather alone is not a strong predictor of energy charged. Nonetheless, this project provided valuable insights into my own data and highlighted the importance of using personalized datasets in data science projects for real-world understanding.
+
+Machine Learning Techniques
+--
+Regression: Predicting Daily Energy Charged (kWh)
+Objective:
+The goal of this machine learning task was to predict the amount of energy (in kWh) charged into the Tesla vehicle using environmental weather variables. The motivation was to examine whether temperature, humidity, wind speed, and precipitation (rain/snow) can explain variations in charging behavior.
+
+Results Overview:
+
+Regression Model: Random Forest Regressor
+
+Features Used:
+
+-temperature_2m
+
+-relative_humidity_2m
+
+-windspeed_10m
+
+-rain_binary
+
+-snowfall_binary
+
+-bad_weather (binary: rain or snow)
+
+*Regression RMSE* (Root Mean Squared Error): 34.56
+Indicates the average deviation of predicted values from actual energy charged.
+
+*Regression MAE* (Mean Absolute Error): 16.32
+Reflects the average absolute difference between predicted and actual values.
+
+- Scatter Plot: Actual vs. Predicted Energy
+  ![image](https://github.com/user-attachments/assets/eacf7eaf-79a3-458c-b00b-099e48af310b)
+
+Most points cluster near the red diagonal line, indicating good prediction accuracy.
+A few outliers exist, suggesting days with unusual charging behavior the model couldn't capture.
+
+- Bar Chart: Average Actual and Predicted Energy by Weather Type
+  ![image](https://github.com/user-attachments/assets/8079e2ed-2b5e-4b21-a6c1-deb7c5067296)
+
+The model successfully distinguished between clear and bad weather days.
+It predicted slightly higher than actual values for rain/snow days but followed the general trend.
+
+- Confusion Matrix: Binned Energy Usage Categories
+  ![image](https://github.com/user-attachments/assets/abd07b0c-6e54-431c-bb70-b453d1aa29b3)
+
+Energy usage was grouped into bins (0–10, 10–20, etc.) to evaluate classification performance.
+Most predictions lie along the diagonal, meaning the model correctly identified energy usage categories.
+Some misclassifications were made especially at higher ranges, possibly due to data imbalance or behavioral variance.
 
 Limitations and future work
-1.time period is limited (only 4 months )
+1.time period is limited (only 1 year )
 2.Driver habits, trip distance and car usage patterns are not included.
